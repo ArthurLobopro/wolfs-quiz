@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  display: flex;
   height: 100vh;
   width: 100vw;
   background-color: var(--background);
@@ -42,8 +43,8 @@ body, input, button, textarea {
   margin: 3.5rem auto;
 }
 
-.content header img {
-  width: 16.7rem;
+.content header > img {
+  width: 23.8rem;
 }
 
 .flex-center, .btn-blue, .btn-white {
@@ -69,10 +70,6 @@ body, input, button, textarea {
   margin: 0 auto;
 }
 
-button, h2 {
-  font-family: 'Poppins', sans-serif;
-}
-
 input, textarea {
   border: 2px solid var(--grey-blue);
   border-radius: 8px;
@@ -82,26 +79,37 @@ input, textarea {
 }
 
 h2 {
+  font-family: 'Poppins', sans-serif;
   font-size: 2.8rem;
   color: var(--black);
 }
 
 /* -------- Botões ---------*/
 .btn-blue {
-  transition: filter .2s;
   background-color: var(--blue);
   color: var(--white);
-  cursor: pointer;
 }
 
 .btn-white {
   border: 2px solid var(--blue);
   color: var(--blue);
+  background-color: var(--white);
 }
 
 .btn-blue, .btn-white {
+  cursor: pointer;
   border-radius: 8px;
   padding: 13px 0;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
+  user-select: none;
+  transition: filter .2s;
+}
+
+.btn-blue > img, .btn-white > img {
+  margin: 0 1rem;
+}
+
+button:hover {
+  filter: brightness(1.2);
 }

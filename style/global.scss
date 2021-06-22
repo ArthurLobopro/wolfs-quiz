@@ -42,6 +42,7 @@ $hover-grey: var(--hover-grey);
 }
 
 body{
+    display: flex;
     height: 100vh;
     width: 100vw;
     background-color: $background;
@@ -55,8 +56,8 @@ body,input,button,textarea{
 .content header{
     width: 80%;
     margin: 3.5rem auto;
-    & img{
-        width: 16.7rem;
+    & > img{
+        width: 23.8rem;
     }
 
 }
@@ -84,10 +85,6 @@ body,input,button,textarea{
     margin: 0 auto;
 }
 
-button,h2{
-    font-family: 'Poppins', sans-serif;
-}
-
 input,textarea{
     border: 2px solid $grey-blue;
     border-radius: 8px;
@@ -97,26 +94,36 @@ input,textarea{
 }
 
 h2{
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
     color: $black;
 }
 /* -------- Botões ---------*/
 .btn-blue{
-    transition: filter .2s;
     background-color: $blue;
     color: $white;
-    cursor: pointer;
 }
 
 .btn-white{
     border: 2px solid $blue;
     color: $blue;
+    background-color: $white;
 }
 
 .btn-blue,.btn-white{
+    cursor: pointer;
     border-radius: 8px;
     padding: 13px 0;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    @extend .flex-center
+    user-select: none;
+    transition: filter .2s;
+    @extend .flex-center;    
+    & > img{
+        margin: 0 1rem;
+    }
+}
+
+button:hover{
+    filter: brightness(1.2);
 }
