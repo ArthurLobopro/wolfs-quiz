@@ -47,13 +47,6 @@ body, input, button, textarea {
   width: 23.8rem;
 }
 
-.flex-center, .btn-blue, .btn-white {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 0;
-}
-
 .sr-only {
   position: absolute;
   height: 1px;
@@ -70,7 +63,7 @@ body, input, button, textarea {
   margin: 0 auto;
 }
 
-input, textarea {
+input {
   border: 2px solid var(--grey-blue);
   border-radius: 8px;
   padding: 13px 12px 13px 16px;
@@ -112,4 +105,12 @@ h2 {
 
 button:hover {
   filter: brightness(1.2);
+}
+
+/* Flex */
+.flex-center, .btn-blue, .btn-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
 }
