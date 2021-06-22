@@ -1,0 +1,82 @@
+.separador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separador .line {
+  height: 2px;
+  width: 50%;
+  border: 1px solid var(--grey-blue);
+}
+
+.separador .text {
+  color: var(--grey-blue);
+  margin: 0 5px;
+}
+
+header {
+  grid-area: header;
+}
+
+#bg {
+  grid-area: bg;
+  background: url("../assets/home-bg-img.svg") no-repeat top/contain;
+  background-position-x: -10rem;
+}
+
+.right {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 11.4rem 1fr;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: 'header header'
+ 'bg main';
+}
+
+main {
+  grid-area: main;
+  grid-template-areas: 'bg right';
+}
+
+main .container {
+  display: flex;
+  flex-direction: column;
+  width: min(36.3rem, 100%);
+}
+
+main h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(20px, 5vh, 2.8rem);
+  margin: 0 0 2.4rem 0;
+}
+
+main input, main button{
+  width: 100%;
+  height: 5rem;
+  margin: 0 0 2.4rem 0;
+}
+
+main button > img, main a > img{
+  margin: 0 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+input{
+  color: var(--grey-blue);
+}
+
+button:hover{
+  filter: brightness(1.2);
+}

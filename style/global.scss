@@ -1,0 +1,122 @@
+html{
+    --blue: #3485FF;
+    --black: #0D114F;
+    --white: #FAFAFA;
+    --red: #E83F5B;
+    --light-blue: #E0ECFF;
+    --background: #FBFCFF;
+    --overlay: #040911;
+    --icons-details: #A5B0C1;
+    --grey-dark: #4D5E77;
+    --grey-blue:  #A1B2CD;
+    --grey-medium: #D3D9E2;
+    --grey-light: #E5EAF1;
+    --hover-blue: #5699FF;
+    --hover-red: #EA4B65;
+    --hover-grey:#8794A7;
+    font-size: 62.5%;
+}
+
+$blue: var(--blue);
+$black: var(--black);
+$white: var(--white);
+$red: var(--red);
+$light-blue: var(--light-blue);
+$background: var(--background);
+$overlay: var(--overlay);
+$icons-details: var(--icons-details);
+$grey-dark: var(--grey-dark);
+$grey-blue: var(--grey-blue);
+$grey-medium: var(--grey-medium);
+$grey-light: var(--grey-light);
+$hover-blue: var(--hover-blue);
+$hover-red: var(--hover-red);
+$hover-grey: var(--hover-grey);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: $background;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body,input,button,textarea{
+    font-size: clamp(14px, 1.6rem, 2vw);
+}
+
+.content header{
+    width: 80%;
+    margin: 3.5rem auto;
+    & img{
+        width: 16.7rem;
+    }
+
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+}
+
+.sr-only{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: none;
+    clip-path: rect(0,0,0,0);
+}
+
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+button,h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+input,textarea{
+    border: 2px solid $grey-blue;
+    border-radius: 8px;
+    padding: 13px 12px 13px 16px;
+    display: flex;
+    align-items: center;
+}
+
+h2{
+    font-size: 2.8rem;
+    color: $black;
+}
+/* -------- Botões ---------*/
+.btn-blue{
+    transition: filter .2s;
+    background-color: $blue;
+    color: $white;
+    cursor: pointer;
+}
+
+.btn-white{
+    border: 2px solid $blue;
+    color: $blue;
+}
+
+.btn-blue,.btn-white{
+    border-radius: 8px;
+    padding: 13px 0;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    @extend .flex-center
+}
