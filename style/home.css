@@ -104,3 +104,7 @@ input{
   right: 5.6rem;
   bottom: -14.8rem;
 }
+
+::placeholder{
+  color: var(--grey-blue);
+}
