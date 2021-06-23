@@ -83,6 +83,10 @@ a:hover {
 input{
   color: var(--grey-blue);
 }
+input:focus{
+  border-color: var(--blue);
+  outline: none;
+}
 
 .ball{
   clip-path: circle();
