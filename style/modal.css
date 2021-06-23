@@ -42,6 +42,11 @@
     margin-bottom: 4rem;
 }
 
+.modal form input:focus{
+    border-color: var(--blue);
+    outline: 0;
+}
+
 .modal .buttons{
     display: flex;
 }
