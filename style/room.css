@@ -1,3 +1,4 @@
+@import url(./modal.css);
 /* Cabeçalho e botões */
 #room header{
     display: flex;
@@ -20,7 +21,7 @@
 
 /* Form */
 
-form{
+#question-form form{
     border: 2px solid var(--grey-blue);
     padding: 1rem;
     border-radius: 0 8px 8px;
@@ -76,14 +77,14 @@ main form button{
     height: 4rem;
 }
 
+body,html{
+    overflow-x: hidden;
+}
+
 /* Perguntas */
 
 .perguntas.void{
     background: url(../assets/empty-state.svg) no-repeat center;
-}
-
-.perguntas{
-    
 }
 
 .pergunta{
@@ -103,10 +104,11 @@ main form button{
 .pergunta .content .text{
     color: var(--black);
     align-self: center;
+    word-break: break-word;
 }
 
 .pergunta .content .avatar{
-    background: url(../assets/users-white.svg) no-repeat center;
+    background: url(../assets/user.svg) no-repeat center;
     background-color: var(--blue);
     width: 5.2rem;
     height: 5.2rem;
@@ -130,6 +132,11 @@ main form button{
     height: 2.2rem;
     cursor: pointer;
     color: var(--grey-dark);
+    user-select: none;
+}
+
+.pergunta .actions > div > a + a{
+    margin-left: 2.4rem;
 }
 
 .pergunta .actions > div > .button:hover{
@@ -137,5 +144,19 @@ main form button{
 }
 
 .pergunta .actions > div > .button > img{
-    margin: 0 .8rem;
+    margin: 0 .8rem 0 0;
+}
+
+/* Lidas */
+
+.pergunta.read .content .avatar{
+    background-color: var(--grey-blue);
+}
+
+.pergunta.read{
+    background-color: var(--grey-light);
+}
+
+.pergunta.read .actions > div > .button + .button{
+    display: none;
 }
