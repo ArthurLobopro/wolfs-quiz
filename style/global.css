@@ -6,7 +6,7 @@ html {
   --red: #E83F5B;
   --light-blue: #E0ECFF;
   --background: #FBFCFF;
-  --overlay: #040911;
+  --overlay: rgba(4, 9, 17, 0.8);
   --icons-details: #A5B0C1;
   --grey-dark: #4D5E77;
   --grey-blue:  #A1B2CD;
