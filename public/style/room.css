@@ -84,7 +84,7 @@ body,html{
 /* Perguntas */
 
 .perguntas.void{
-    background: url(../assets/empty-state.svg) no-repeat center;
+    background: url(../images/empty-state.svg) no-repeat center;
 }
 
 .pergunta{
@@ -108,7 +108,7 @@ body,html{
 }
 
 .pergunta .content .avatar{
-    background: url(../assets/user.svg) no-repeat center;
+    background: url(../images/user.svg) no-repeat center;
     background-color: var(--blue);
     width: 5.2rem;
     height: 5.2rem;
