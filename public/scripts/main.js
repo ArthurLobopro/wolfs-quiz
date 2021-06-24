@@ -54,5 +54,5 @@ const modalForm = document.querySelector('.modal form')
 
 const setFormAction = (question, action) => {
     const room = document.getElementById('room-id').dataset.id
-    modalForm.setAttribute('action', `/room/${room}/${question}/${action}`)
+    modalForm.setAttribute('action', `/question/${room}/${question}/${action}`)
 }
