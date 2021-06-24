@@ -5,7 +5,7 @@ const initDb = {
         const db = await Database()
 
         await db.exec(`CREATE TABLE rooms (
-            id INTEGER PRIMARY KEY,
+            id TEXT PRIMARY KEY,
             pass TEXT
         )`)
 
