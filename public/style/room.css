@@ -14,7 +14,7 @@
     margin-right: 0;
 }
 
-.buttons button{
+.buttons .button{
     margin: 0 .5rem 0;
     padding: 11px 16px;
 }
