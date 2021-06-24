@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <script src="scripts/main.js" type="module"></script>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                 <img src="images/logo.svg" alt="logo roquet.q">
             </a>
             <div class="buttons">
-                <button class="btn-white">
+                <button class="btn-white" id="room-id" data-id="323243">
                     #323243 <img src="images/copy.svg" alt="">
                 </button>
                 <button class="btn-blue">
@@ -34,7 +36,7 @@
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="">
+                <form action="" method="POST">
                     <label for="pergunta" class="sr-only">O que você quer perguntar?</label>
                     <textarea name="" id="pergunta" placeholder="O que você quer perguntar?"></textarea>
                     <div class="form-bottom">
@@ -47,19 +49,20 @@
                 </form>
             </section>
 
-            <section class="perguntas">
-                <div class="pergunta">
+            <section class="perguntas"
+            >
+                <div class="pergunta" data-id='1'>
                     <div class="content">
                         <div class="avatar"></div>
                         <div class="text">Qual a diferença entre const, var e let?</div>
                     </div>
                     <div class="actions">
                         <div>
-                            <a class="button">
+                            <a class="button check">
                                 <img src="images/check.svg" alt="Ícone checado">
-                                Marcar como lida
+                                <span>Marcar como lida</span>
                             </a>
-                            <a class="button">
+                            <a class="button delete">
                                 <img src="images/delete.svg" alt="Ícone Deletar">
                                 Excluir
                             </a>
@@ -67,18 +70,18 @@
                     </div>
                 </div>
 
-                <div class="pergunta">
+                <div class="pergunta" data-id='2'>
                     <div class="content">
                         <div class="avatar"></div>
                         <div class="text">O que é typescript?</div>
                     </div>
                     <div class="actions">
                         <div>
-                            <a class="button">
+                            <a class="button check">
                                 <img src="images/check.svg" alt="Ícone checado">
-                                Marcar como lida
+                                <span>Marcar como lida</span>
                             </a>
-                            <a class="button">
+                            <a class="button delete">
                                 <img src="images/delete.svg" alt="Ícone Deletar">
                                 Excluir
                             </a>
@@ -86,18 +89,18 @@
                     </div>
                 </div>
 
-                <div class="pergunta read">
+                <div class="pergunta read" data-id='3'>
                     <div class="content">
                         <div class="avatar"></div>
                         <div class="text">O que é JavaScript?</div>
                     </div>
                     <div class="actions">
                         <div>
-                            <a class="button">
+                            <a class="button check">
                                 <img src="images/check.svg" alt="Ícone checado">
-                                Marcar como lida
+                                <span>Marcar como lida</span>
                             </a>
-                            <a class="button">
+                            <a class="button delete">
                                 <img src="images/delete.svg" alt="Ícone Deletar">
                                 Excluir
                             </a>
@@ -117,8 +120,8 @@
                 <label for="confirm-password" class="sr-only">Digite sua senha</label>
                 <input type="password" id="confirm-password" placeholder="Digite sua senha">
                 <div class="buttons">
-                    <button class="cancel">Cancelar</button>
-                    <button class="delete" type="submit">Sim, excluir</button>
+                    <div class="cancel button">Cancelar</div>
+                    <button class="delete button" type="submit">Sim, excluir</button>
                 </div>
             </form>
         </div>
