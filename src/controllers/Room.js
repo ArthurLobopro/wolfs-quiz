@@ -45,6 +45,17 @@ const RoomController = {
         await db.close()
 
         res.render('room', { roomId, questions, readQuestions, isVoid: questions.length === 0 && readQuestions.length === 0 })
+    },
+    async enter(req,res){
+        const roomId = req.body.room
+        const db = await Database()
+        const room = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
+        console.log(room);
+        if(typeof room === 'object'){
+            res.redirect(`/room/${roomId}`)
+        }else{
+            res.render('room-error', { id: roomId })
+        }
     }
 }
 
