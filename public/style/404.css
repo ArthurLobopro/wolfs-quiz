@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1{
+    margin-bottom: 3rem;
+    width: max-content;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 5rem;
+    width: 50%;
+}
+
+.buttons a{
+    height: 4rem;
+    padding: 1.3rem 1.6rem;
+}
