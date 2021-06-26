@@ -11,7 +11,7 @@ route.get('/room/:room', RoomController.open )
 
 //  Posts
 route.post('/question/:room/:question/:action', QuestionController.index)
-route.post('/room/', (req,res) => res.redirect(`/room/${req.body.room}`))
+route.post('/room/', RoomController.enter)
 route.post('/create-room', RoomController.create)
 route.post('/question/create/:room', QuestionController.create)
 
