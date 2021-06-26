@@ -18,15 +18,28 @@
 </head>
 
 <body>
-    <div id="room" class="content">
+    <div id="room" class="content ">
         <header>
             <a href="/">
                 <img src="/images/logo.svg" alt="logo roquet.q">
             </a>
             <div class="buttons">
-                <button class="btn-white button" id="room-id" data-id="323243">
-                    #323243 <img src="/images/copy.svg" alt="">
+                <button class="btn-white button" id="room-id" data-id="<%= roomId %>">
+                    #<%= roomId %> <img src="/images/copy.svg" alt="">
                 </button>
+                <script>
+                    const roomIdButton = document.getElementById('room-id')
+                    const copy = text => {
+                        navigator.clipboard.writeText(text)
+                        .then(() => alert("Copiado para área de transferência!"))
+                    }
+                    const copyToClipboard = event => {
+                        let text = String(roomIdButton.dataset.id)
+                        copy(text)
+                    }
+                    roomIdButton.onclick = copyToClipboard
+                    
+                </script>
                 <a href="/create" class="btn-blue button">
                     <img src="/images/users-white.svg" alt="Ícone de Usuário">
                     Criar Sala
@@ -36,9 +49,9 @@
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="" method="POST">
+                <form action="/question/create/<%= roomId%>" method="POST">
                     <label for="pergunta" class="sr-only">O que você quer perguntar?</label>
-                    <textarea name="" id="pergunta" placeholder="O que você quer perguntar?"></textarea>
+                    <textarea name="question" id="pergunta" placeholder="O que você quer perguntar?"></textarea>
                     <div class="form-bottom">
                         <div>
                             <img src="/images/lock.svg" alt="Icone cadeado">
@@ -49,12 +62,12 @@
                 </form>
             </section>
 
-            <section class="perguntas"
-            >
-                <div class="pergunta" data-id='1'>
+            <section class="perguntas <%= isVoid ? 'void' : '' %> ">
+            <% questions.forEach( question => { %>
+                <div class="pergunta" data-id='<%= question.id %>'>
                     <div class="content">
                         <div class="avatar"></div>
-                        <div class="text">Qual a diferença entre const, var e let?</div>
+                        <div class="text"><%= question.title %></div>
                     </div>
                     <div class="actions">
                         <div>
@@ -69,18 +82,15 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="pergunta" data-id='2'>
+            <%}) %> 
+            <% readQuestions.forEach( question => { %> 
+                <div class="pergunta read" data-id='<%= question.id %>'>
                     <div class="content">
                         <div class="avatar"></div>
-                        <div class="text">O que é typescript?</div>
+                        <div class="text"><%= question.title %></div>
                     </div>
                     <div class="actions">
                         <div>
-                            <a class="button check">
-                                <img src="/images/check.svg" alt="Ícone checado">
-                                <span>Marcar como lida</span>
-                            </a>
                             <a class="button delete">
                                 <img src="/images/delete.svg" alt="Ícone Deletar">
                                 Excluir
@@ -88,25 +98,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="pergunta read" data-id='3'>
-                    <div class="content">
-                        <div class="avatar"></div>
-                        <div class="text">O que é JavaScript?</div>
-                    </div>
-                    <div class="actions">
-                        <div>
-                            <a class="button check">
-                                <img src="/images/check.svg" alt="Ícone checado">
-                                <span>Marcar como lida</span>
-                            </a>
-                            <a class="button delete">
-                                <img src="/images/delete.svg" alt="Ícone Deletar">
-                                Excluir
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <%}) %>  
             </section>
         </main>
     </div>
