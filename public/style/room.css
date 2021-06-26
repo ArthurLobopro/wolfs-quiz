@@ -85,6 +85,7 @@ body,html{
 
 .perguntas.void{
     background: url(../images/empty-state.svg) no-repeat center;
+    min-height: 30rem;
 }
 
 .pergunta{
@@ -155,8 +156,4 @@ body,html{
 
 .pergunta.read{
     background-color: var(--grey-light);
-}
-
-.pergunta.read .actions > div > .button + .button{
-    display: none;
 }
