@@ -10,8 +10,9 @@ const QuestionController = {
         const dbPassword = await db.get(`SELECT * FROM rooms WHERE id = ${room}`)
         
         if(dbPassword.pass === password){
-            if(action === 'check'){
-                await db.run(`UPDATE questions SET read = 1 WHERE id = ${question}`)
+            if(action === 'toogle-check'){
+                const { read } = await db.get(`SELECT read FROM questions WHERE id = ${question}`)
+                await db.run(`UPDATE questions SET read = ${ read === 0 ? 1 : 0} WHERE id = ${question}`)
             }
 
             if(action === 'delete'){
@@ -22,8 +23,6 @@ const QuestionController = {
         }
 
         res.render('pass-error', { room })
-        console.log({ room, question, action });
-        // console.log(password);
     },
     async create(req,res){
         const question = req.body.question
@@ -43,10 +42,6 @@ const QuestionController = {
         await db.close()
 
         res.redirect(`/room/${room}`)
-    },
-    async delete(){
-        const db = await Database()
-        // const roomPassword = await 
     }
 }
 
