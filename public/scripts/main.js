@@ -10,8 +10,9 @@ checkButtons.forEach( check => {
         perguntas.forEach( pergunta => {
             if(pergunta.contains(target)){
                 const questionId = pergunta.dataset.id
-                setFormAction(questionId,'check')
-                Modal.changeCheck()
+                const isRead = pergunta.classList.contains('read')
+                setFormAction(questionId,'toogle-check')
+                Modal.changeCheck(isRead)
                 Modal.showAndHide()
                 // const checkButtonText = pergunta.querySelector('.check > span')
                 // pergunta.classList.toggle('read')
@@ -28,7 +29,7 @@ checkButtons.forEach( check => {
 })
 
 const deleteButtons = document.querySelectorAll('.actions a.delete')
-console.log(deleteButtons);
+
 deleteButtons.forEach( button => {
     button.addEventListener( 'click', event => {
         Modal.changeDelete()
@@ -40,7 +41,6 @@ deleteButtons.forEach( button => {
         
         perguntas.forEach( pergunta => {
             if(pergunta.contains(target)){
-                console.log(pergunta.dataset);
                 const questionId = pergunta.dataset.id
                 setFormAction(questionId,'delete')
             }
