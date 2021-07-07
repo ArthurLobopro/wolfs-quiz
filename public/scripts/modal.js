@@ -14,9 +14,10 @@ const Modal = {
             modalMainButton.classList.add('delete')
         }
     },
-    changeCheck(){
-        modalTitle.innerText = 'Marcar como lida'
-        modalMessage.innerText = 'Deseja marcar como lida?'
+    changeCheck(isRead){
+        const str = isRead ? 'Desmarcar' : 'Marcar'
+        modalTitle.innerText = `${str} como lida`
+        modalMessage.innerText = `Deseja ${str.toLowerCase()} como lida?`
         modalMainButton.innerText = 'Sim'
     },
     showAndHide(){
